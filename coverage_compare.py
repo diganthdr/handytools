@@ -38,7 +38,7 @@ def convert_coverage_report_to_dict( coverage_filename ):
 
 def compare_coverage_maps(previous_map, latest_map):
     for fname, coverage in previous_map.items(): #Comaprision, for O(1) for each comparsion O(n)
-        if int(latest_map[fname]) < int(previous_map[fname]):
+        if fname in latest_map and int(latest_map[fname]) < int(previous_map[fname]):
             print("File: ", fname)
             print("Previous: ",previous_map[fname])
             print("Latest: ",latest_map[fname])
